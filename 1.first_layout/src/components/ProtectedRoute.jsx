@@ -6,7 +6,7 @@ function PrivateRoute({ redirectTo = '/auth/login', element }) {
 
   const isAuthenticated = true // тут ОГРАНИЧЕНИЕ
   if (!isAuthenticated)
-    return <Navigate to={redirectTo} state={{ referrer: location }} />
+    return <Navigate to={redirectTo} state={{ referrer: location }} /> // — здесь state сохраняет текущий location под именем referrer. Это можно использовать, например, для отслеживания откуда пришел пользователь.
   return element
 }
 // // ===== первый вар по видео

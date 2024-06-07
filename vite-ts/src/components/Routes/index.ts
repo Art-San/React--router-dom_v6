@@ -1,13 +1,15 @@
 // Layouts
-import AnonymousLayout from '../layouts/AnonymousLayout'
-import MainLayout from '../layouts/MainLayout'
+import AnonymousLayout from '../Layouts/AnonymousLayout'
+import MainLayout from '../Layouts/MainLayout'
+import PublicLayout from '../Layouts/PublicLayout'
+import { renderRoutes } from './renderRoutes'
 
 // Pages
-import Login from '../pages/Login'
-import Home from '../pages/Home'
-import CreateUser from '../pages/CreateUser'
-import ListUsers from '../pages/ListUsers'
-import { renderRoutes } from './generate-routes'
+import Login from '../../pages/Login'
+import Home from '../../pages/Home'
+import CreateUser from '../../pages/CreateUser'
+import ListUsers from '../../pages/ListUsers'
+import Showcase from '../../pages/Showcase'
 
 // Определение интерфейса RouteElement с обязательным свойством path
 export interface RouteElement {
@@ -28,6 +30,18 @@ export interface MainRoute {
 
 // Объявление массива маршрутов, соответствующего типу MainRoute[]
 export const routes: MainRoute[] = [
+  {
+    layout: PublicLayout,
+    routes: [
+      {
+        name: 'showcase',
+        title: 'Showcase page',
+        component: Showcase,
+        path: '/',
+        isPublic: true
+      }
+    ]
+  },
   {
     layout: AnonymousLayout,
     routes: [
