@@ -1,0 +1,14 @@
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Расстояние между элементами */
+  padding: 16px; /* Внутренний отступ */
+}
+
+.order-item {
+  background-color: #f9f9f9; /* Светлый фон */
+  border: 1px solid #ddd; /* Граница */
+  border-radius: 8px; /* Скругленные углы */
+  padding: 16px; /* Внутренний отступ */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+}
